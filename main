@@ -1,0 +1,24 @@
+% DVB-S2 Parameters
+n = 64800; % Codeword length
+code_rate = 3/4; % Code rate
+k = n * code_rate; % Information bits length
+M = 360; % Periodicity factor
+q = (n - k) / M; % Number of groups
+
+% Generate random information bits
+info_bits = randi([0, 1], 1, k);
+
+% Define the base matrix (example for demonstration)
+% In practice, this should be the base matrix from the DVB-S2 standard
+base_matrix = randi([0, 1], q, k/M);
+
+% Encode using the IRA encoder
+[parity_bits, codeword] = ira_encoder_simple(info_bits, M, q, n, k, base_matrix);
+
+% Display results
+disp('base matrix  : ');
+disp(base_matrix);
+disp('Parity Bits:');
+disp(parity_bits());
+disp('Codeword:');
+disp(codeword(1:10));
