@@ -1,14 +1,4 @@
 function [parity_bits, codeword] = (info_bits, M, q, n, k, base_matrix)
-    % Inputs:
-    % info_bits: Random information bits (1 x k vector)
-    % M: Periodicity factor (e.g., 360 for DVB-S2)
-    % q: Number of groups (n-k)/M
-    % n: Codeword length (e.g., 64800 for DVB-S2)
-    % k: Information bits length (e.g., 32400 for 1/2 code rate)
-    % base_matrix: Base parity-check matrix (q x k/M matrix)
-    % Outputs:
-    % parity_bits: Computed parity bits (1 x (n-k) vector)
-    % codeword: Complete codeword (1 x n vector)
 
     % Step 1: Initialize S values
     S = zeros(1, q * M); % S vector to store intermediate values
