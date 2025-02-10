@@ -1,4 +1,4 @@
-function [parity_bits, codeword] = (info_bits, M, q, n, k, base_matrix)
+function [parity_bits, codeword] = ira_encoder_simple(info_bits, M, q, n, k, base_matrix)
 
     % Step 1: Initialize S values
     S = zeros(1, q * M); % S vector to store intermediate values
